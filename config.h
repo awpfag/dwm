@@ -14,12 +14,13 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const char *fonts[]          = { "Cascadia Code:size=10" };
 static const char dmenufont[]       = "Cascadia Code:size=10";
 static const char col_bg[]          = "#2e3440";
-static const char col_fg[]        = "#eceff4";
+static const char col_fg[]          = "#d8dee9";
+static const char col_grey[]        = "#4c566a";
 static const char col_main[]        = "#d8dee9";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_fg, col_bg,    col_bg },
-	[SchemeSel]  = { col_bg, col_fg,  col_fg  },
+	/*               fg      bg        border   */
+	[SchemeNorm] = { col_fg, col_bg,   col_bg },
+	[SchemeSel]  = { col_fg, col_grey, col_fg  },
 };
 
 /* tagging */
