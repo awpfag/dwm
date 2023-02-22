@@ -13,14 +13,13 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const char *fonts[]          = { "Cascadia Code:size=10" };
 static const char dmenufont[]       = "Cascadia Code:size=10";
-static const char col_bg[]          = "#2e3440";
-static const char col_fg[]          = "#d8dee9";
-static const char col_grey[]        = "#4c566a";
-static const char col_main[]        = "#d8dee9";
+static const char col_grey[]        = "#1d2021";
+static const char col_blue[]        = "#3c3836";
+static const char col_white[]       = "#ebdbb2";
 static const char *colors[][3]      = {
-	/*               fg      bg        border   */
-	[SchemeNorm] = { col_fg, col_bg,   col_bg },
-	[SchemeSel]  = { col_fg, col_grey, col_fg  },
+	/*               fg        bg        border   */
+	[SchemeNorm] = { col_white, col_grey,   col_grey },
+	[SchemeSel]  = { col_white, col_blue,   col_white  },
 };
 
 /* tagging */
@@ -32,7 +31,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class            instance    title           tags mask     isfloating   monitor */
-	{ "discord",        NULL,       NULL,           2,            0,           1 },
+	{ "whatever",       NULL,       NULL,           2,            0,           1 },
 };
 
 /* layout(s) */
@@ -61,7 +60,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_fg, "-sf", col_bg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_grey, "-nf", col_white, "-sb", col_blue, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
