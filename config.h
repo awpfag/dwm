@@ -14,12 +14,12 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const char *fonts[]          = { "Cascadia Code:size=10" };
 static const char dmenufont[]       = "Cascadia Code:size=10";
 static const char col_grey[]        = "#1d2021";
-static const char col_blue[]        = "#3c3836";
+static const char col_lightg[]      = "#3c3836"; /* short for light grey */
 static const char col_white[]       = "#ebdbb2";
 static const char *colors[][3]      = {
 	/*               fg        bg        border   */
 	[SchemeNorm] = { col_white, col_grey,   col_grey },
-	[SchemeSel]  = { col_white, col_blue,   col_white  },
+	[SchemeSel]  = { col_white, col_lightg,   col_white  },
 };
 
 /* tagging */
@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_grey, "-nf", col_white, "-sb", col_blue, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_grey, "-nf", col_white, "-sb", col_lightg, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
