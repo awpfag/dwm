@@ -5,18 +5,19 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int snap      = 32;       /* snap pixel */
+
 static const char *fonts[]          = { "Cascadia Code:size=10:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Cascadia Code:size=10";
-static const char col_grey1[]       = "#282828"; /* darkest */
-static const char col_grey2[]       = "#333333"; /* dark */
-static const char col_grey3[]       = "#d3d3d3"; /* light */
-static const char col_grey4[]       = "#ebdbb2"; /* lightest */
+static const char dmenufont[]       = "Cascadia Code:size=10:antialias=true:autohint=true";
+
+static const char col_grey1[]       = "#282828"; /* lighter */
+static const char col_grey2[]       = "#1d2021"; /* darker */
+static const char col_white[]       = "#fbf1c7";
 static const char col_blue[]        = "#458588";
 static const char col_red[]         = "#cc241d";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_grey4, col_grey1, col_grey1 },
-	[SchemeSel]  = { col_grey4, col_blue, col_red},
+        /*               fg         bg         border   */
+        [SchemeNorm] = { col_white, col_grey1, col_grey2},
+        [SchemeSel]  = { col_white, col_blue,  col_red},
 };
 
 /* tagging */
@@ -57,7 +58,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_grey1, "-nf", col_grey4, "-sb", col_grey2, "-sf", col_grey4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_grey1, "-nf", col_white, "-sb", col_blue, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static Key keys[] = {
